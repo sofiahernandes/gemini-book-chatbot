@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Light Theme (Default) */
+  .theme-light {
+    --theme-background: 0 0% 100%;
+    --theme-foreground: 222.2 84% 4.9%;
+    --theme-card: 0 0% 100%;
+    --theme-card-foreground: 222.2 84% 4.9%;
+    --theme-primary: 221.2 83.2% 53.3%;
+    --theme-primary-foreground: 210 40% 98%;
+    --theme-secondary: 210 40% 96.1%;
+    --theme-secondary-hover: 210 40% 92%;
+    --theme-secondary-foreground: 222.2 47.4% 11.2%;
+    --theme-accent: 0 0% 100%;
+    --theme-accent-foreground: 222.2 47.4% 11.2%;
+    --theme-border: 214.3 31.8% 91.4%;
+    --theme-input: 214.3 31.8% 91.4%;
+    --theme-user-message: 221.2 83.2% 53.3%;
+    --theme-user-message-text: 0 0% 100%;
+    --theme-assistant-message: 220 14% 96%;
+    --theme-assistant-message-text: 222.2 84% 4.9%;
+    --theme-gradient-from: 221.2 83.2% 96%;
+    --theme-gradient-to: 0 0% 100%;
+    --theme-header-bg: 0 0% 100% / 0.8;
+    --theme-header-border: 221.2 83.2% 90%;
+  }
+
+  /* Dark Theme */
+  .theme-dark {
+    --theme-background: 222.2 84% 4.9%;
+    --theme-foreground: 210 40% 98%;
+    --theme-card: 222.2 84% 9.8%;
+    --theme-card-foreground: 210 40% 98%;
+    --theme-primary: 217.2 91.2% 59.8%;
+    --theme-primary-foreground: 222.2 47.4% 11.2%;
+    --theme-secondary: 217.2 32.6% 17.5%;
+    --theme-secondary-hover: 217.2 32.6% 22%;
+    --theme-secondary-foreground: 210 40% 98%;
+    --theme-accent: 222.2 84% 4.9%;
+    --theme-accent-foreground: 210 40% 98%;
+    --theme-border: 217.2 32.6% 17.5%;
+    --theme-input: 217.2 32.6% 17.5%;
+    --theme-user-message: 217.2 91.2% 59.8%;
+    --theme-user-message-text: 222.2 47.4% 11.2%;
+    --theme-assistant-message: 217.2 32.6% 17.5%;
+    --theme-assistant-message-text: 210 40% 98%;
+    --theme-gradient-from: 222.2 84% 4.9%;
+    --theme-gradient-to: 222.2 84% 9.8%;
+    --theme-header-bg: 222.2 84% 4.9% / 0.9;
+    --theme-header-border: 217.2 32.6% 17.5%;
+  }
+
+  /* Blue Theme */
+  .theme-blue {
+    --theme-background: 213 100% 98%;
+    --theme-foreground: 222.2 84% 4.9%;
+    --theme-card: 0 0% 100%;
+    --theme-card-foreground: 222.2 84% 4.9%;
+    --theme-primary: 210 100% 50%;
+    --theme-primary-foreground: 210 40% 98%;
+    --theme-secondary: 210 100% 95%;
+    --theme-secondary-hover: 210 100% 90%;
+    --theme-secondary-foreground: 210 100% 30%;
+    --theme-accent: 210 100% 95%;
+    --theme-accent-foreground: 210 100% 30%;
+    --theme-border: 210 100% 90%;
+    --theme-input: 210 100% 90%;
+    --theme-user-message: 210 100% 50%;
+    --theme-user-message-text: 0 0% 100%;
+    --theme-assistant-message: 210 100% 95%;
+    --theme-assistant-message-text: 210 100% 30%;
+    --theme-gradient-from: 210 100% 95%;
+    --theme-gradient-to: 213 100% 98%;
+    --theme-header-bg: 0 0% 100% / 0.8;
+    --theme-header-border: 210 100% 90%;
+  }
+
+  /* Purple Theme */
+  .theme-purple {
+    --theme-background: 270 100% 98%;
+    --theme-foreground: 222.2 84% 4.9%;
+    --theme-card: 0 0% 100%;
+    --theme-card-foreground: 222.2 84% 4.9%;
+    --theme-primary: 270 100% 60%;
+    --theme-primary-foreground: 210 40% 98%;
+    --theme-secondary: 270 100% 95%;
+    --theme-secondary-hover: 270 100% 90%;
+    --theme-secondary-foreground: 270 100% 30%;
+    --theme-accent: 270 100% 95%;
+    --theme-accent-foreground: 270 100% 30%;
+    --theme-border: 270 100% 90%;
+    --theme-input: 270 100% 90%;
+    --theme-user-message: 270 100% 60%;
+    --theme-user-message-text: 0 0% 100%;
+    --theme-assistant-message: 270 100% 95%;
+    --theme-assistant-message-text: 270 100% 30%;
+    --theme-gradient-from: 270 100% 95%;
+    --theme-gradient-to: 270 100% 98%;
+    --theme-header-bg: 0 0% 100% / 0.8;
+    --theme-header-border: 270 100% 90%;
+  }
+
+  /* Green Theme */
+  .theme-green {
+    --theme-background: 150 100% 98%;
+    --theme-foreground: 222.2 84% 4.9%;
+    --theme-card: 0 0% 100%;
+    --theme-card-foreground: 222.2 84% 4.9%;
+    --theme-primary: 150 100% 40%;
+    --theme-primary-foreground: 210 40% 98%;
+    --theme-secondary: 150 100% 95%;
+    --theme-secondary-hover: 150 100% 90%;
+    --theme-secondary-foreground: 150 100% 25%;
+    --theme-accent: 150 100% 95%;
+    --theme-accent-foreground: 150 100% 25%;
+    --theme-border: 150 100% 90%;
+    --theme-input: 150 100% 90%;
+    --theme-user-message: 150 100% 40%;
+    --theme-user-message-text: 0 0% 100%;
+    --theme-assistant-message: 150 100% 95%;
+    --theme-assistant-message-text: 150 100% 25%;
+    --theme-gradient-from: 150 100% 95%;
+    --theme-gradient-to: 150 100% 98%;
+    --theme-header-bg: 0 0% 100% / 0.8;
+    --theme-header-border: 150 100% 90%;
+  }
+  :root {
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-theme-border;
+  }
+  body {
+    @apply bg-theme-background text-theme-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--theme-secondary));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--theme-border));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--theme-secondary-foreground) / 0.3);
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid hsl(var(--theme-primary));
+  outline-offset: 2px;
+}
+
+/* Theme utility classes */
+.bg-theme-background {
+  background-color: hsl(var(--theme-background));
+}
+.bg-theme-foreground {
+  background-color: hsl(var(--theme-foreground));
+}
+.bg-theme-card {
+  background-color: hsl(var(--theme-card));
+}
+.bg-theme-primary {
+  background-color: hsl(var(--theme-primary));
+}
+.bg-theme-secondary {
+  background-color: hsl(var(--theme-secondary));
+}
+.bg-theme-accent {
+  background-color: hsl(var(--theme-accent));
+}
+.bg-theme-user-message {
+  background-color: hsl(var(--theme-user-message));
+}
+.bg-theme-assistant-message {
+  background-color: hsl(var(--theme-assistant-message));
+}
+
+.text-theme-background {
+  color: hsl(var(--theme-background));
+}
+.text-theme-foreground {
+  color: hsl(var(--theme-foreground));
+}
+.text-theme-card-foreground {
+  color: hsl(var(--theme-card-foreground));
+}
+.text-theme-primary {
+  color: hsl(var(--theme-primary));
+}
+.text-theme-primary-foreground {
+  color: hsl(var(--theme-primary-foreground));
+}
+.text-theme-secondary-foreground {
+  color: hsl(var(--theme-secondary-foreground));
+}
+.text-theme-accent-foreground {
+  color: hsl(var(--theme-accent-foreground));
+}
+.text-theme-user-message-text {
+  color: hsl(var(--theme-user-message-text));
+}
+.text-theme-assistant-message-text {
+  color: hsl(var(--theme-assistant-message-text));
+}
+
+.border-theme-border {
+  border-color: hsl(var(--theme-border));
+}
+.border-theme-input {
+  border-color: hsl(var(--theme-input));
+}
+
+.from-theme-gradient-from {
+  --tw-gradient-from: hsl(var(--theme-gradient-from));
+}
+.to-theme-gradient-to {
+  --tw-gradient-to: hsl(var(--theme-gradient-to));
+}
+
+.hover\:bg-theme-secondary-hover:hover {
+  background-color: hsl(var(--theme-secondary-hover));
+}
+.hover\:bg-theme-primary-hover:hover {
+  background-color: hsl(var(--theme-primary) / 0.9);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
