@@ -50,7 +50,7 @@ GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 NEXTAUTH_SECRET=
 NEXTAUTH_URL=http://localhost:3000
-NODE_TLS_REJECT_UNAUTHORIZED=0 # For local testing only!! Remove it in production.
+NODE_TLS_REJECT_UNAUTHORIZED=0 # For local testing only!!
 GEMINI_API_KEY=
 ```
 
@@ -64,7 +64,8 @@ GEMINI_API_KEY=
 http://localhost:3000/api/auth/callback/google
 
 7. Copy the **Client ID** and **Client Secret** into your `.env.local` file as `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`
-8. For `NEXTAUTH_SECRET`, generate a secret running in your Git Bash: `openssl rand -base64 32`
+8. For `NEXTAUTH_SECRET`, generate a secret running in your Git Bash:  
+   `openssl rand -base64 32`
 
 <br/>
 
@@ -102,3 +103,4 @@ You are free to use, modify, and share this project — just give proper credit!
   <a href="mailto:sofiahernandes.dev@gmail.com"><img height="30px" src="https://skillicons.dev/icons?i=gmail"/></a><span> ∙ </span>
   <a href="https://www.instagram.com/sofiabotechiaa/"><img height="30px" src="https://skillicons.dev/icons?i=instagram"/></a>
 </div>
+
