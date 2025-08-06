@@ -48,8 +48,9 @@
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
     "next": "^14.2.30",
+    "next-auth": "^4.24.11",
     "next-themes": "^0.4.6",
-    "react": "^18",
+    "react": "^18.3.1",
     "react-day-picker": "9.7.0",
     "react-dom": "^18",
     "react-hook-form": "^7.57.0",
@@ -65,13 +66,35 @@
     "zod": "^3.25.57"
   },
   "devDependencies": {
+    "@types/debug": "^4.1.12",
     "@types/dotenv": "^8.2.3",
-    "@types/node": "^22",
-    "@types/react": "^18",
+    "@types/estree": "^1.0.8",
+    "@types/estree-jsx": "^1.0.5",
+    "@types/hast": "^3.0.4",
+    "@types/mdast": "^4.0.4",
+    "@types/ms": "^2.1.0",
+    "@types/node": "^22.17.0",
+    "@types/prop-types": "^15.7.15",
+    "@types/react": "^18.3.23",
     "@types/react-dom": "^18",
+    "@types/unist": "^3.0.3",
     "dotenv": "^17.2.1",
     "postcss": "^8.5",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5"
-  }
+    "typescript": "^5.9.2"
+  },
+  "description": "<div align=\"center\">\r   <h1>🚧 This project is unfinished</h1>\r   <p>Gia is an unfinished AI agent for Glow (an ecommerce of self-improvement projects, which you can check <a href=\"https://glowglobal.vercel.app/\">here</a>), built to support productivity, planning, and wellness with smart, gentle, and personalized guidance for your self-growth journey.</p>\r </div>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sofiahernandes/gia-agent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sofiahernandes/gia-agent/issues"
+  },
+  "homepage": "https://github.com/sofiahernandes/gia-agent#readme"
 }

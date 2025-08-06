@@ -1,144 +1,50 @@
 "use client";
 
-import ReactMarkdown from "react-markdown";
-import { useState } from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
+import HomePage from "@/components/authenticated-app";
 import { Brain, Target, Zap } from "lucide-react";
-import { ThemeSelector } from "./components/theme-selector";
 
-type Message = {
-  role: "user" | "model";
-  text: string;
-};
+export default function UserSession() {
+  const { data: session } = useSession();
 
-export default function HomePage() {
-  const [input, setInput] = useState("");
-  const [chat, setChat] = useState<Message[]>([]);
-  const [loading, setLoading] = useState(false);
-
-  const handleSend = async () => {
-    if (!input.trim()) return;
-
-    const userMessage: Message = { role: "user", text: input };
-    const updatedChat = [...chat, userMessage];
-    setChat(updatedChat);
-    setInput("");
-    setLoading(true);
-
-    try {
-      const res = await fetch("/api/gia", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: input,
-          history: updatedChat,
-        }),
-      });
-
-      const data = await res.json();
-
-      if (data.response) {
-        setChat([...updatedChat, { role: "model", text: data.response }]);
-      } else {
-        setChat([
-          ...updatedChat,
-          { role: "model", text: "Sorry, something went wrong." },
-        ]);
-      }
-    } catch (err) {
-      console.error(err);
-      setChat([
-        ...updatedChat,
-        { role: "model", text: "Error connecting with Gia." },
-      ]);
-    }
-
-    setLoading(false);
-  };
-
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-theme-accent p-2">
-      {/* Header Section */}
-      <div className="relative w-full px-2 z-10 bg-theme-header-bg backdrop-blur-sm mb-4">
-        <div className="flex justify-between align-top">
-          <button
-            onClick={() => console.log("Sair")}
-            className="px-4 text-xs rounded-md hover:text-red-700 hover:font-bold focus:ring-2 focus:ring-red-700 focus:ring-offset-2"
-          >
-            Log out
-          </button>
-          <ThemeSelector />
-        </div>
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center space-y-2">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-light text-theme-foreground mb-4 tracking-tight">
-              Hey! I'm {" "}<span className="font-semibold text-theme-primary">Gia</span>
-            </h1>
-            <div className="flex flex-wrap justify-center gap-3 mt-6">
-              <div className="flex items-center gap-2 px-3 py-2 bg-theme-secondary text-theme-secondary-foreground rounded-full text-sm">
-                <Target className="w-3 h-3" />
-                Focus
-              </div>
-              <div className="flex items-center gap-2 px-3 py-2 bg-theme-secondary text-theme-secondary-foreground rounded-full text-sm">
-                <Zap className="w-3 h-3" />
-                Productivity
-              </div>
-              <div className="flex items-center gap-2 px-3 py-2 bg-theme-secondary text-theme-secondary-foreground rounded-full text-sm">
-                <Brain className="w-3 h-3" />
-                Discipline
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Chat Box Section */}
-      <div className="w-full max-w-4xl border border-theme-border bg-theme-card rounded-lg shadow-md flex flex-col h-[70vh]">
-        <div className="flex-1 p-4 overflow-y-auto space-y-4">
-          {chat.map((msg, index) => (
-            <div
-              key={index}
-              className={`p-2 rounded-md max-w-[90%] m-auto ${
-                msg.role === "user"
-                  ? "bg-theme-user-message text-white self-end"
-                  : "bg-theme-system-message text-theme-foreground self-start"
-              }`}
-            >
-              {msg.role === "user" ? (
-                <p className="px-4 text-[0.9rem]">{msg.text}</p>
-              ) : (
-                <div className="prose text-[0.9rem] max-w-[95%] m-auto text-justify">
-                  <ReactMarkdown>
-                    {msg.text}
-                  </ReactMarkdown>
+  if (!session) {
+    return (
+        <div className="flex flex-col items-center justify-center h-screen">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center space-y-2">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-theme-foreground mb-4 tracking-tight">
+                  Hey! I'm {" "}<span className="font-semibold text-theme-primary">Gia</span>
+                </h1>
+                <div className="flex flex-wrap justify-center gap-3 pb-6">
+                  <div className="flex items-center gap-2 px-3 py-2 bg-theme-secondary text-theme-secondary-foreground rounded-full text-sm">
+                    <Target className="w-3 h-3" />
+                    Focus
+                  </div>
+                  <div className="flex items-center gap-2 px-3 py-2 bg-theme-secondary text-theme-secondary-foreground rounded-full text-sm">
+                    <Zap className="w-3 h-3" />
+                    Productivity
+                  </div>
+                  <div className="flex items-center gap-2 px-3 py-2 bg-theme-secondary text-theme-secondary-foreground rounded-full text-sm">
+                    <Brain className="w-3 h-3" />
+                    Discipline
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
-          ))}
-          {loading && (
-            <div className="italic text-sm text-theme-foreground/60">
-              ...
-            </div>
-          )}
+            <button
+                onClick={() => signIn("google")}
+                className="flex items-center justify-center gap-2 bg-white text-gray-600 border border-gray-400 rounded-lg px-5 py-2 text-base font-medium cursor-pointer transition hover:bg-gray-100 hover:shadow-sm"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48">
+                  <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+                </svg>
+                Sign in with Google
+            </button>
         </div>
-        <div className="p-4 border-t flex">
-          <input
-            type="text"
-            className="flex-1 p-2 border rounded-l-lg focus:outline-none"
-            placeholder="Type your message..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            disabled={loading}
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
-          />
-          <button
-            onClick={handleSend}
-            disabled={loading}
-            className="px-4 py-2 bg-theme-user-message text-white rounded-r-lg hover:bg-theme-primary-foreground disabled:bg-theme-accent focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Send
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+    );
+  }
+
+  if (session) {
+    return <HomePage id={session.user.id} name={session.user.name} email={session.user.email} signOut={signOut} />;
+  }
 }
