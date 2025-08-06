@@ -1,5 +1,5 @@
 {
-  "name": "gia-agent",
+  "name": "gemini-book-chatbot",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -83,18 +83,17 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5.9.2"
   },
-  "description": "<div align=\"center\">\r   <h1>🚧 This project is unfinished</h1>\r   <p>Gia is an unfinished AI agent for Glow (an ecommerce of self-improvement projects, which you can check <a href=\"https://glowglobal.vercel.app/\">here</a>), built to support productivity, planning, and wellness with smart, gentle, and personalized guidance for your self-growth journey.</p>\r </div>",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sofiahernandes/gia-agent.git"
+    "url": "git+https://github.com/sofiahernandes/gemini-book-chatbot.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/sofiahernandes/gia-agent/issues"
+    "url": "https://github.com/sofiahernandes/gemini-book-chatbot/issues"
   },
-  "homepage": "https://github.com/sofiahernandes/gia-agent#readme"
+  "homepage": "https://github.com/sofiahernandes/gemini-book-chatbot#readme"
 }

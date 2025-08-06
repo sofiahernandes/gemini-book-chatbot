@@ -4,7 +4,7 @@ import type React from "react"
 
 import { createContext, useContext, useState, useEffect } from "react"
 
-type ThemeType = "light" | "dark" | "blue" | "purple" | "green"
+type ThemeType = "light" | "blue" | "purple"
 
 type ThemeContextType = {
   theme: ThemeType
@@ -18,18 +18,18 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   // Load theme from localStorage on initial render
   useEffect(() => {
-    const savedTheme = localStorage.getItem("gia-theme") as ThemeType
-    if (savedTheme && ["light", "dark", "blue", "purple", "green"].includes(savedTheme)) {
+    const savedTheme = localStorage.getItem("bookie-theme") as ThemeType
+    if (savedTheme && ["light", "blue", "purple"].includes(savedTheme)) {
       setTheme(savedTheme)
     }
   }, [])
 
   // Save theme to localStorage when it changes
   useEffect(() => {
-    localStorage.setItem("gia-theme", theme)
+    localStorage.setItem("bookie-theme", theme)
 
     // Apply theme class to document
-    document.documentElement.classList.remove("theme-light", "theme-dark", "theme-blue", "theme-purple", "theme-green")
+    document.documentElement.classList.remove("theme-light", "theme-blue", "theme-purple")
     document.documentElement.classList.add(`theme-${theme}`)
   }, [theme])
 

@@ -26,31 +26,7 @@
     --theme-gradient-to: 0 0% 100%;
     --theme-header-bg: 0 0% 100% / 0.8;
     --theme-header-border: 221.2 83.2% 90%;
-  }
-
-  /* Dark Theme */
-  .theme-dark {
-    --theme-background: 222.2 84% 4.9%;
-    --theme-foreground: 210 40% 98%;
-    --theme-card: 222.2 84% 9.8%;
-    --theme-card-foreground: 210 40% 98%;
-    --theme-primary: 217.2 91.2% 59.8%;
-    --theme-primary-foreground: 222.2 47.4% 11.2%;
-    --theme-secondary: 217.2 32.6% 17.5%;
-    --theme-secondary-hover: 217.2 32.6% 22%;
-    --theme-secondary-foreground: 210 40% 98%;
-    --theme-accent: 222.2 84% 4.9%;
-    --theme-accent-foreground: 210 40% 98%;
-    --theme-border: 217.2 32.6% 17.5%;
-    --theme-input: 217.2 32.6% 17.5%;
-    --theme-user-message: 217.2 91.2% 59.8%;
-    --theme-user-message-text: 222.2 47.4% 11.2%;
-    --theme-assistant-message: 217.2 32.6% 17.5%;
-    --theme-assistant-message-text: 210 40% 98%;
-    --theme-gradient-from: 222.2 84% 4.9%;
-    --theme-gradient-to: 222.2 84% 9.8%;
-    --theme-header-bg: 222.2 84% 4.9% / 0.9;
-    --theme-header-border: 217.2 32.6% 17.5%;
+    --prose-primary: 210 40% 98%;
   }
 
   /* Blue Theme */
@@ -103,30 +79,6 @@
     --theme-header-border: 270 100% 90%;
   }
 
-  /* Green Theme */
-  .theme-green {
-    --theme-background: 150 100% 98%;
-    --theme-foreground: 222.2 84% 4.9%;
-    --theme-card: 0 0% 100%;
-    --theme-card-foreground: 222.2 84% 4.9%;
-    --theme-primary: 150 100% 40%;
-    --theme-primary-foreground: 210 40% 98%;
-    --theme-secondary: 150 100% 95%;
-    --theme-secondary-hover: 150 100% 90%;
-    --theme-secondary-foreground: 150 100% 25%;
-    --theme-accent: 150 100% 95%;
-    --theme-accent-foreground: 150 100% 25%;
-    --theme-border: 150 100% 90%;
-    --theme-input: 150 100% 90%;
-    --theme-user-message: 150 100% 40%;
-    --theme-user-message-text: 0 0% 100%;
-    --theme-assistant-message: 150 100% 95%;
-    --theme-assistant-message-text: 150 100% 25%;
-    --theme-gradient-from: 150 100% 95%;
-    --theme-gradient-to: 150 100% 98%;
-    --theme-header-bg: 0 0% 100% / 0.8;
-    --theme-header-border: 150 100% 90%;
-  }
   :root {
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

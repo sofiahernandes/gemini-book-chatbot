@@ -14,8 +14,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Gia - Assistente de Produtividade",
-  description: "Sua guia para foco, disciplina e resultados consistentes",
+  title: "Bookie - Your Personal Book Assistant",
+  description: "Your personal book assistant. Bookie helps you discover, track, and discuss your favorite books.",
   keywords: ["produtividade", "disciplina", "foco", "assistente virtual"],
   authors: [{ name: "Sofia Botechia Hernandes" }],
   icons: { icon: "/favicon-16x16.png" },

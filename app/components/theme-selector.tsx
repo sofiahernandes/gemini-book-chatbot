@@ -2,9 +2,9 @@
 
 import { useState, useRef, useEffect } from "react"
 import { useTheme } from "../contexts/theme-context"
-import { Palette, Moon, Sun, Check, ChevronDown } from "lucide-react"
+import { Palette, Sun, Check, ChevronDown } from "lucide-react"
 
-type ThemeType = "light" | "dark" | "blue" | "purple" | "green"
+type ThemeType = "light" | "blue" | "purple"
 
 type ThemeOption = {
   id: string;
@@ -13,11 +13,9 @@ type ThemeOption = {
 }
 
 const themes = [
-    { id: "light", name: "Claro", icon: Sun },
-    { id: "dark", name: "Escuro", icon: Moon },
-    { id: "blue", name: "Azul", icon: Palette },
-    { id: "purple", name: "Roxo", icon: Palette },
-    { id: "green", name: "Verde", icon: Palette },
+    { id: "light", name: "Light", icon: Sun },
+    { id: "blue", name: "Blue", icon: Palette },
+    { id: "purple", name: "Purple", icon: Palette },
   ]
 
 export function ThemeSelector() {

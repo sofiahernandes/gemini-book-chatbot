@@ -32,7 +32,7 @@ export default function HomePage({ id, email, name, signOut }: Props) {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/gia", {
+      const res = await fetch("/api/bookie", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -55,7 +55,7 @@ export default function HomePage({ id, email, name, signOut }: Props) {
       console.error(err);
       setChat([
         ...updatedChat,
-        { role: "model", text: "Error connecting with Gia." },
+        { role: "model", text: "Error connecting with Bookie." },
       ]);
     }
 
@@ -78,7 +78,7 @@ export default function HomePage({ id, email, name, signOut }: Props) {
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-2">
             <h1 className="text-xl sm:text-2xl lg:text-3xl font-light text-theme-foreground mb-4 tracking-tight">
-              Hey! I'm {" "}<span className="font-semibold text-theme-primary">Gia</span>
+              Hey! I'm {" "}<span className="font-semibold text-theme-primary">Bookie</span>
             </h1>
             <div className="flex flex-wrap justify-center gap-3 mt-6">
               <div className="flex items-center gap-2 px-3 py-2 bg-theme-secondary text-theme-secondary-foreground rounded-full text-sm">
@@ -113,7 +113,7 @@ export default function HomePage({ id, email, name, signOut }: Props) {
               {msg.role === "user" ? (
                 <p className="px-4 text-[0.9rem]">{msg.text}</p>
               ) : (
-                <div className="prose text-[0.9rem] max-w-[95%] m-auto text-justify">
+                <div className="prose text-prose-primary text-[0.9rem] max-w-[95%] m-auto text-justify">
                   <ReactMarkdown>
                     {msg.text}
                   </ReactMarkdown>
