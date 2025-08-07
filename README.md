@@ -7,6 +7,8 @@
     |
     <a href="https://github.com/sofiahernandes/gemini-book-chatbot/issues">Request Feature</a>
   </p>
+  
+  [![Video Title](https://github.com/sofiahernandes/gemini-book-chatbot/blob/main/public/bookie-thumbnail.jpg)](https://www.youtube.com/watch?v=EJLQIQ8aoFc)
 </div>
 
 ## 🚀 Tech Stack
@@ -103,4 +105,5 @@ You are free to use, modify, and share this project — just give proper credit!
   <a href="mailto:sofiahernandes.dev@gmail.com"><img height="30px" src="https://skillicons.dev/icons?i=gmail"/></a><span> ∙ </span>
   <a href="https://www.instagram.com/sofiabotechiaa/"><img height="30px" src="https://skillicons.dev/icons?i=instagram"/></a>
 </div>
+
 
