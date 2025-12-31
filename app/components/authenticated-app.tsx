@@ -63,9 +63,9 @@ export default function HomePage({ id, email, name, signOut }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-theme-accent p-2">
+    <div className="flex flex-col items-center justify-start min-h-screen bg-theme-accent p-2">
       {/* Header Section */}
-      <div className="relative w-full px-2 z-10 bg-theme-header-bg backdrop-blur-sm mb-4">
+      <div className="relative w-full px-2 z-10 bg-theme-header-bg backdrop-blur-sm my-4">
         <div className="flex justify-between align-top">
           <button
             onClick={() => signOut()}
@@ -75,7 +75,7 @@ export default function HomePage({ id, email, name, signOut }: Props) {
           </button>
           <ThemeSelector />
         </div>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto py-4">
           <div className="text-center space-y-2">
             <h1 className="text-xl sm:text-2xl lg:text-3xl font-light text-theme-foreground mb-4 tracking-tight">
               Hey! I'm {" "}<span className="font-semibold text-theme-primary">Bookie</span>
